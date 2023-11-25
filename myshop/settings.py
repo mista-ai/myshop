@@ -137,3 +137,4 @@ EMAIL_USE_TLS = True
 STRIPE_PUBLISHABLE_KEY = personal_data.STRIPE_PUBLISHABLE_KEY  # Publishable key
 STRIPE_SECRET_KEY = personal_data.STRIPE_SECRET_KEY  # Secret key
 STRIPE_API_VERSION = '2023-10-16'
+STRIPE_WEBHOOK_SECRET = personal_data.endpoint_secret
