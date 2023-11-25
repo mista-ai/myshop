@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+import personal_data
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'djcelery',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CART_SESSION_ID = 'cart'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = personal_data.email
+EMAIL_HOST_PASSWORD = personal_data.password
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+CELERY_BROKER_URL = 'pyamqp://guest:guest@localhost:5672//'
+CELERY_RESULT_BACKEND = 'rpc://'
