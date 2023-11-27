@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
@@ -140,3 +141,8 @@ STRIPE_PUBLISHABLE_KEY = personal_data.STRIPE_PUBLISHABLE_KEY  # Publishable key
 STRIPE_SECRET_KEY = personal_data.STRIPE_SECRET_KEY  # Secret key
 STRIPE_API_VERSION = '2023-10-16'
 STRIPE_WEBHOOK_SECRET = personal_data.endpoint_secret
+
+# Redis settings
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1
